@@ -1,14 +1,15 @@
-package contoller
+package controller
 
 import (
 	"encoding/json"
+	"net/http"
+	"strconv"
+
 	"github.com/go-playground/validator/v10"
 	"github.com/gorilla/mux"
 	"main.go/constant"
 	"main.go/dto"
 	"main.go/service"
-	"net/http"
-	"strconv"
 )
 
 type CtrlStc struct {

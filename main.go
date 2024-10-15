@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"log"
+	"net/http"
+
+	"github.com/gorilla/mux"
 	"main.go/auth"
-	"main.go/contoller"
+	"main.go/controller"
 	"main.go/middleware"
 	"main.go/repository"
 	"main.go/service"
-	"net/http"
 )
 
 func main() {
@@ -20,7 +21,7 @@ func main() {
 
 	repo := repository.NewRepository()
 	svc := service.NewService(repo)
-	ctrl := contoller.NewController(svc)
+	ctrl := controller.NewController(svc)
 
 	authCtrl := auth.AuthController{}
 
